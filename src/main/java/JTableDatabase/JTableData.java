@@ -19,8 +19,9 @@ import javax.swing.table.DefaultTableModel;
 public class JTableData extends javax.swing.JFrame {
 
     private static final String CONN_URL = "jdbc:mysql://localhost:3306/";
-    private static final String DB_NAME = "testdb";
+    private static final String DB_NAME = "testDB";
     private static final String USERNAME = "clees_demo";
+    private static final String URL = "jdbc:mysql://computing.gfmat.org:3306/" + DB_NAME + "?user=clees_demo&useSSL=true";
     private static final String PASSWORD = "Nky^K^*WqAscLExxjs2Y6WButrdsmmBuzb^CDEdVSCL@CfpNSMj5nB&r5BeYDBZsFnGDucf9yNe52unyfya8w%b7cUeeubynP4S9pHKz!PWUpszT&fuCLrC5CLPZ8e77";
 
     /**
@@ -90,7 +91,7 @@ public class JTableData extends javax.swing.JFrame {
 
     private void btnShowDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowDataActionPerformed
         // TODO add your handling code here:
-        try ( Connection con = DriverManager.getConnection(CONN_URL + DB_NAME, USERNAME, PASSWORD)) {
+        try ( Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
             System.out.println("CONNECTION MADE!");
 
             Statement st = con.createStatement();
